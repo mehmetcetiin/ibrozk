@@ -1,0 +1,25 @@
+@section Styles {
+<link rel="stylesheet" href="~/css/contact-style.css" />
+}
+
+<div class="container">
+    <div class="contact-box">
+        <div class="left">
+        </div>
+        <form asp-controller="Contact" asp-action="Contact">
+            <div class="right">
+                <h2>İletişim</h2>
+                <input type="text" class="field" placeholder="Ad & Soyad" name="Adsoyad">
+                <input type="text" class="field" placeholder="Mail Adresi" name="Email">
+                <input type="text" class="field" placeholder="Telefon" name="Telefon">
+                <textarea placeholder="Mesaj" class="field" name="Mesaj"></textarea>
+                <button type="submit" class="btn">Gönder</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    document.body.className = document.body.className.replace('no-js', '');
+</script>

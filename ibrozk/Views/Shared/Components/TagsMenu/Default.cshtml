@@ -1,0 +1,30 @@
+@{
+var uniqueTags = Model.GroupBy(t => t.Tagname).Select(g => g.First()).ToList();
+}
+
+
+@model List<Tag>
+
+    <div class="menu">
+        <div class="title">MENÜ</div>
+        <a class="menu-icon" href="#"><img src="~/photos/menulogo.png" alt=""></a>
+        <ul class="nav">
+            <li><a href="/images">Çalışmalar</a></li>
+            <li><a href="/contact/contact">İletişim</a></li>
+
+            @foreach (var tag in uniqueTags){
+            <li><a href="/images/@tag.Tagname">@tag.Tagname</a></li>
+            }
+
+        </ul>
+        <div class="menuicons">
+            <a href="https://www.instagram.com/ibrahim.ozkadir/" target="_blank" class="fa fa-instagram"></a>
+            <a href="#" target="_blank" class="fa fa-pinterest"></a>
+            <a href="https://www.shutterstock.com/g/Ibrahim+Ozkadir?rid=216384281" target="_blank"
+                class="fa fa-photo"></a>
+        </div>
+        <p class="myfooter">Copyright © <a href="https://www.instagram.com/mehmetccetiin/" target="_blank"> mehmetcetin
+            </a> 2023.
+            Tüm
+            hakları saklıdır.</p>
+    </div>

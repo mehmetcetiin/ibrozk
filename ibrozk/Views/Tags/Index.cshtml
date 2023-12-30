@@ -1,0 +1,38 @@
+@{
+Layout=null;
+
+}
+
+
+
+
+<link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css">
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Etiket Listesi</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered mx-auto">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Etiket Adı</th>
+                    <th scope="col">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tag in Model)
+                {
+                <tr>
+                    <td>@tag.Tagname</td>
+                    <td>
+                        <form method="post" asp-controller="Tags" asp-action="Delete">
+                            <input type="hidden" name="tagId" value="@tag.TagId" />
+                            <button type="submit" class="btn btn-danger">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

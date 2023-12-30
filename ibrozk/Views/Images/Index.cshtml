@@ -1,0 +1,42 @@
+﻿@model ImagesViewModel
+
+@section Styles {
+<link rel="stylesheet" href="~/css/homepage-style.css">
+}
+<div class="container" oncontextmenu>
+    <div class="photo-gallery">
+        <div class="column">
+            @foreach (var post in Model.Posts){
+            @if (post.Column == 1){
+            <div class="photo"><img src="/photos/@post.Urlname" alt=""></div>
+            }}
+        </div>
+
+        <div class="column">
+            @foreach (var post in Model.Posts){
+            @if (post.Column == 2){
+            <div class="photo"><img src="/photos/@post.Urlname" alt=""></div>
+            }}
+        </div>
+        <div class="column">
+            @foreach (var post in Model.Posts){
+            @if (post.Column == 3){
+            <div class="photo"><img src="/photos/@post.Urlname" alt=""></div>
+            }}
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+
+@section Scripts {
+<script src="~/js/script.js"></script>
+}

@@ -1,0 +1,32 @@
+@model ibrozk.Entity.Post
+
+@{
+Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css">
+
+<div class="container mt-5">
+    <div class="jumbotron">
+        <div class="container">
+            <h2 class="display-4 text-center">Gönderiyi Sil</h2>
+
+            <p class="lead text-center">Bu gönderiyi silmek istediğinizden emin misiniz?</p>
+
+            <div class="text-center">
+                <img src="/photos/@Model.Urlname" class="img-fluid" alt="Fotoğraf">
+            </div>
+
+            <form asp-action="DeleteConfirmed" asp-route-id="@Model.PostId" method="post">
+                <div class="d-grid gap-2 mt-3">
+                    <button type="submit" class="btn btn-danger btn-lg">Sil</button>
+                </div>
+            </form>
+
+            <hr class="my-4">
+
+            <p class="lead text-center">
+                <a asp-action="List" class="btn btn-secondary btn-lg">İptal</a>
+            </p>
+        </div>
+    </div>
+</div>
